@@ -1,0 +1,17 @@
+Supplying fonts, while not forbidden, fall under a gray area. So download the fonts required for this project with the following name
+Fonts used in this project & their exact filenames:
+
+1. monogram -- monogram.ttf
+Link: https://datagoblin.itch.io/monogram
+
+2. at01 -- at01.ttf
+Link: https://grafxkid.itch.io/at01
+
+3. m6x11 -- m6x11.ttf
+Link: https://managore.itch.io/m6x11
+
+4. Peaberry -- PeaberryMono.ttf
+Link: https://emhuo.itch.io/peaberry-pixel-font
+
+5. Quaver -- quaver.ttf
+Link: https://caffinate.itch.io/quaver
