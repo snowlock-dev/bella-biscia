@@ -4,7 +4,7 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jcwox"]
 
-[node name="CharacterBody3D" type="CharacterBody3D" unique_id=1106722274]
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=1106722274 groups=["Player"]]
 script = ExtResource("1_v0iea")
 
 [node name="Head" type="Node3D" parent="." unique_id=1268067616]

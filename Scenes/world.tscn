@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dmg0uxpn3v25w" path="res://Scenes/player.tscn" id="1_a02cp"]
 [ext_resource type="Shader" uid="uid://b3g557y0hd2pb" path="res://Scripts/sky.gdshader" id="1_go701"]
+[ext_resource type="PackedScene" uid="uid://djmbeililoaun" path="res://Scenes/npc.tscn" id="3_5a7ea"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_5a7ea"]
 noise_type = 4
@@ -13,6 +14,7 @@ noise = SubResource("FastNoiseLite_5a7ea")
 seamless = true
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_fo5ed"]
+noise_type = 3
 seed = 124245234
 fractal_type = 3
 
@@ -23,8 +25,8 @@ seamless = true
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p0e0h"]
 shader = ExtResource("1_go701")
 shader_parameter/use_time_of_day = true
-shader_parameter/time_of_day = 17.2050008172375
-shader_parameter/sky_morning = Color(0.2, 0.4, 0.7, 1)
+shader_parameter/time_of_day = 8.00000038
+shader_parameter/sky_morning = Color(0.3635999, 0.38640633, 0.58177894, 1)
 shader_parameter/horizon_morning = Color(0.9, 0.6, 0.4, 1)
 shader_parameter/cloud_color_morning = Color(0.9, 0.85, 0.8, 1)
 shader_parameter/sky_afternoon = Color(0, 0.3, 0.7, 1)
@@ -63,7 +65,7 @@ albedo_color = Color(0.16267392, 0.3201653, 0.17364651, 1)
 environment = SubResource("Environment_5a7ea")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=412113684]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 2, 0)
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 50, 0)
 shadow_enabled = true
 
 [node name="Plane" type="CSGBox3D" parent="." unique_id=1876158298]
@@ -73,3 +75,6 @@ material = SubResource("StandardMaterial3D_jcwox")
 
 [node name="CharacterBody3D" parent="." unique_id=1106722274 instance=ExtResource("1_a02cp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.005692, 0)
+
+[node name="NPC" parent="." unique_id=1491250561 instance=ExtResource("3_5a7ea")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
