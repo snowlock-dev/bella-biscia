@@ -37,7 +37,8 @@ uniform sampler2D night_noise_01 : hint_default_black;
 uniform sampler2D night_noise_02 : hint_default_black;
 
 group_uniforms Sun;
-uniform float sun_scale = 0.05;
+uniform float sun_scale = 0.05; // Adjusted default for angular radius (smaller = normal sun size)
+uniform float sun_sharpness : hint_range(1.0, 100.0) = 20.0;
 uniform float sun_strength = 15.0;
 uniform vec4 sun_color : source_color = vec4(1.0, 0.9, 0.0, 1.0);
 
@@ -103,10 +104,13 @@ void sky() {
 		cloud_value *= smoothstep(0.0, 0.2, EYEDIR.y);
 	}
 
-	// Sun calculation
-	float sun_distance = clamp(1.0 - distance(EYEDIR, light_dir) - pow(cloud_value, cloud_occlude_exponent), 0.0, 1.0);
-	float sun_disc = clamp(smoothstep(1.0 - sun_scale, 1.0, sun_distance), 0.0, 1.0);
-	float sun_glow = clamp(0.0, 1.0, (pow(sun_distance, 4.0) * 0.07));
+	// Sun calculation (FIXED)
+	float sun_angular_dist = distance(EYEDIR, light_dir);
+	float cloud_occlusion = pow(cloud_value, cloud_occlude_exponent);
+	
+	// Sun size is determined by sun_scale, edge crispness is controlled by sun_sharpness
+	float sun_disc = 1.0 - smoothstep(sun_scale, sun_scale + (0.05 / sun_sharpness), sun_angular_dist + cloud_occlusion);
+	float sun_glow = clamp(0.0, 1.0, (pow(clamp(1.0 - sun_angular_dist, 0.0, 1.0), 4.0) * 0.07));
 	vec3 sun = mix(vec3(0.0), sun_color.rgb * sun_strength, max(sun_disc, sun_glow));
 
 	// Star calculations (only visible at night)
