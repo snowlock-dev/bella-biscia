@@ -1,13 +1,53 @@
 [gd_scene format=3 uid="uid://qusjv3mykjr2"]
 
 [ext_resource type="PackedScene" uid="uid://dmg0uxpn3v25w" path="res://Scenes/player.tscn" id="1_a02cp"]
+[ext_resource type="Shader" uid="uid://b3g557y0hd2pb" path="res://Scripts/sky.gdshader" id="1_go701"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_a02cp"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_5a7ea"]
+noise_type = 4
+seed = 1933129860
+fractal_type = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_go701"]
+noise = SubResource("FastNoiseLite_5a7ea")
+seamless = true
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_fo5ed"]
+seed = 124245234
+fractal_type = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_8j60k"]
+noise = SubResource("FastNoiseLite_fo5ed")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p0e0h"]
+shader = ExtResource("1_go701")
+shader_parameter/use_time_of_day = true
+shader_parameter/time_of_day = 17.2050008172375
+shader_parameter/sky_morning = Color(0.2, 0.4, 0.7, 1)
+shader_parameter/horizon_morning = Color(0.9, 0.6, 0.4, 1)
+shader_parameter/cloud_color_morning = Color(0.9, 0.85, 0.8, 1)
+shader_parameter/sky_afternoon = Color(0, 0.3, 0.7, 1)
+shader_parameter/horizon_afternoon = Color(0.5918644, 0.7319757, 0.7324875, 1)
+shader_parameter/cloud_color_afternoon = Color(0.8, 0.8, 0.8, 1)
+shader_parameter/sky_night = Color(0.05, 0.1, 0.15, 1)
+shader_parameter/horizon_night = Color(0.1, 0.15, 0.2, 1)
+shader_parameter/cloud_color_night = Color(0.2, 0.25, 0.3, 1)
+shader_parameter/horizon_exponent = 2.0
+shader_parameter/cloud_tex_01 = SubResource("NoiseTexture2D_go701")
+shader_parameter/cloud_tex_02 = SubResource("NoiseTexture2D_8j60k")
+shader_parameter/cloud_tiling = Vector2(1, 1)
+shader_parameter/wind_speed = Vector2(0.5, 0.5)
+shader_parameter/cloud_density = 0.7
+shader_parameter/cloud_depth = 2.0
+shader_parameter/cloud_shape_exponent = 2.0
+shader_parameter/cloud_occlude_exponent = 1.0
+shader_parameter/sun_scale = 0.05
+shader_parameter/sun_strength = 8.0
+shader_parameter/sun_color = Color(0.8394013, 0.84432954, 0.7472734, 1)
 
 [sub_resource type="Sky" id="Sky_go701"]
-sky_material = SubResource("ProceduralSkyMaterial_a02cp")
+sky_material = SubResource("ShaderMaterial_p0e0h")
 
 [sub_resource type="Environment" id="Environment_5a7ea"]
 background_mode = 2
