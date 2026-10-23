@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://qusjv3mykjr2"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yp4wr"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_a02cp"]
+sky_material = SubResource("ProceduralSkyMaterial_yp4wr")
+
+[sub_resource type="Environment" id="Environment_go701"]
+background_mode = 2
+sky = SubResource("Sky_a02cp")
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jcwox"]
+albedo_color = Color(0.16267392, 0.3201653, 0.17364651, 1)
+
+[node name="World" type="Node3D" unique_id=1634756010]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1966186093]
+environment = SubResource("Environment_go701")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=412113684]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 2, 0)
+shadow_enabled = true
+
+[node name="Plane" type="CSGBox3D" parent="." unique_id=1876158298]
+use_collision = true
+size = Vector3(100, 0, 100)
+material = SubResource("StandardMaterial3D_jcwox")
