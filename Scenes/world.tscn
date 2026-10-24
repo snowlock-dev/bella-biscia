@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dmg0uxpn3v25w" path="res://Scenes/player.tscn" id="1_a02cp"]
 [ext_resource type="Shader" uid="uid://b3g557y0hd2pb" path="res://Scripts/sky.gdshader" id="1_go701"]
 [ext_resource type="PackedScene" uid="uid://djmbeililoaun" path="res://Scenes/npc.tscn" id="3_5a7ea"]
+[ext_resource type="PackedScene" uid="uid://rd8bqnpw1105" path="res://Assets/Models/snake_up.glb" id="3_8j60k"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_5a7ea"]
 noise_type = 4
@@ -55,7 +56,14 @@ sky_material = SubResource("ShaderMaterial_p0e0h")
 [sub_resource type="Environment" id="Environment_5a7ea"]
 background_mode = 2
 sky = SubResource("Sky_go701")
-glow_enabled = true
+ambient_light_source = 3
+ambient_light_sky_contribution = 0.7
+reflected_light_source = 2
+tonemap_mode = 3
+ssao_enabled = true
+ssao_radius = 2.0
+fog_enabled = true
+fog_sky_affect = 0.01
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jcwox"]
 albedo_color = Color(0.16267392, 0.3201653, 0.17364651, 1)
@@ -75,7 +83,8 @@ size = Vector3(100, 0, 100)
 material = SubResource("StandardMaterial3D_jcwox")
 
 [node name="CharacterBody3D" parent="." unique_id=1106722274 instance=ExtResource("1_a02cp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.005692, 0)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 11.324452, 1.7426085, 21.817326)
 
-[node name="NPC" parent="." unique_id=1491250561 instance=ExtResource("3_5a7ea")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+[node name="snake_up" parent="." unique_id=1983450186 instance=ExtResource("3_8j60k")]
+
+[node name="NPC" parent="snake_up" unique_id=1491250561 instance=ExtResource("3_5a7ea")]

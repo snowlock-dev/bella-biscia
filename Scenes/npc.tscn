@@ -2,23 +2,18 @@
 
 [ext_resource type="Script" uid="uid://b6ktdutods1ec" path="res://Scripts/npc.gd" id="1_acqhf"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mgodo"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_jcwox"]
-
 [sub_resource type="SphereShape3D" id="SphereShape3D_jcwox"]
 radius = 2.5
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_mgodo"]
+
 [node name="NPC" type="StaticBody3D" unique_id=1491250561]
 script = ExtResource("1_acqhf")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1903059420]
-shape = SubResource("CapsuleShape3D_mgodo")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1232012438]
-mesh = SubResource("CapsuleMesh_jcwox")
 
 [node name="InteractionArea" type="Area3D" parent="." unique_id=1170516678]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea" unique_id=1928800144]
 shape = SubResource("SphereShape3D_jcwox")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=75040689]
+shape = SubResource("SphereShape3D_mgodo")
