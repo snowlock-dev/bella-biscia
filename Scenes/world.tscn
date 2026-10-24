@@ -4,6 +4,7 @@
 [ext_resource type="Shader" uid="uid://b3g557y0hd2pb" path="res://Scripts/sky.gdshader" id="1_go701"]
 [ext_resource type="PackedScene" uid="uid://djmbeililoaun" path="res://Scenes/npc.tscn" id="3_5a7ea"]
 [ext_resource type="PackedScene" uid="uid://rd8bqnpw1105" path="res://Assets/Models/snake_up.glb" id="3_8j60k"]
+[ext_resource type="PackedScene" uid="uid://bh1rpkx7t1jb8" path="res://Scenes/mission.tscn" id="5_mission"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_5a7ea"]
 noise_type = 4
@@ -88,3 +89,6 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 11.324452, 1.7426085, 2
 [node name="snake_up" parent="." unique_id=1983450186 instance=ExtResource("3_8j60k")]
 
 [node name="NPC" parent="snake_up" unique_id=1491250561 instance=ExtResource("3_5a7ea")]
+
+[node name="Mission" parent="." unique_id=33822698 instance=ExtResource("5_mission")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.324, 0.02, 18)

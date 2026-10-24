@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://bh1rpkx7t1jb8"]
+
+[ext_resource type="Script" uid="uid://tbxjs7ma88cw" path="res://Scripts/mission.gd" id="1_mission"]
+[ext_resource type="Shader" uid="uid://cwfrsr53q4ar4" path="res://Scripts/mission.gdshader" id="2_shader"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mission"]
+render_priority = 0
+shader = ExtResource("2_shader")
+shader_parameter/base_color = Color(0.7294118, 0.07058824, 0.15686275, 0.99215686)
+shader_parameter/accent_color = Color(0.87969416, 0.7970897, 0.7791869, 1)
+shader_parameter/emission_strength = 5.5
+shader_parameter/stripe_count = 18.0
+shader_parameter/stripe_speed = 0.2
+shader_parameter/stripe_softness = 0.18
+shader_parameter/ring_radius = 1.15
+shader_parameter/ring_width = 0.28
+shader_parameter/edge_softness = 0.1
+shader_parameter/pulse_speed = 0.0
+shader_parameter/pulse_amount = 0.18
+shader_parameter/vertical_fade = 1.25
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_mission"]
+material = SubResource("ShaderMaterial_mission")
+top_radius = 1.2
+bottom_radius = 1.2
+height = 0.5
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_mission"]
+radius = 1.5
+
+[node name="Mission" type="Area3D" unique_id=1714514483]
+script = ExtResource("1_mission")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=868915915]
+mesh = SubResource("CylinderMesh_mission")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=78915934]
+shape = SubResource("CylinderShape3D_mission")

@@ -6,6 +6,7 @@
 radius = 2.5
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_mgodo"]
+radius = 1.0
 
 [node name="NPC" type="StaticBody3D" unique_id=1491250561]
 script = ExtResource("1_acqhf")
