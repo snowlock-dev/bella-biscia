@@ -2,6 +2,42 @@
 
 [ext_resource type="Script" uid="uid://b6x1minigamepopup" path="res://Scripts/minigame_popup.gd" id="1_minigame"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_minigame"]
+bg_color = Color(0.96, 0.93, 0.86, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.38, 0.30, 0.24, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_button"]
+bg_color = Color(0.92, 0.88, 0.80, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.38, 0.30, 0.24, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_button_hover"]
+bg_color = Color(0.85, 0.80, 0.72, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.38, 0.30, 0.24, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [node name="MinigamePopup" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -18,7 +54,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.04, 0.04, 0.06, 0.85)
+color = Color(0.18, 0.15, 0.12, 0.7)
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -27,50 +63,52 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -340.0
-offset_top = -260.0
-offset_right = 340.0
-offset_bottom = 260.0
+offset_left = -400.0
+offset_top = -300.0
+offset_right = 400.0
+offset_bottom = 300.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_minigame")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 20.0
-offset_top = 20.0
-offset_right = -20.0
-offset_bottom = -20.0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = -24.0
+offset_bottom = -24.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 12
+theme_override_constants/separation = 16
 
 [node name="TitleLabel" type="Label" parent="Panel/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 22
+theme_override_font_sizes/font_size = 28
 text = "CASE DEDUCTION & RATTLE CIPHER"
 horizontal_alignment = 1
 
 [node name="DescLabel" type="Label" parent="Panel/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 24
 text = "Select the 2 true pieces of evidence and decode the 3-digit rattle combination."
 horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="EvidenceBox" type="VBoxContainer" parent="Panel/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 4
+theme_override_constants/separation = 8
 
 [node name="CipherBox" type="HBoxContainer" parent="Panel/VBoxContainer"]
 layout_mode = 2
 alignment = 1
-theme_override_constants/separation = 25
+theme_override_constants/separation = 30
 
 [node name="FeedbackLabel" type="Label" parent="Panel/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.9, 0.3, 0.3, 1)
+theme_override_font_sizes/font_size = 24
 text = ""
 horizontal_alignment = 1
 
@@ -80,11 +118,23 @@ alignment = 1
 theme_override_constants/separation = 20
 
 [node name="SubmitButton" type="Button" parent="Panel/VBoxContainer/ButtonBox"]
-custom_minimum_size = Vector2(200, 40)
+custom_minimum_size = Vector2(240, 46)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.20, 0.16, 0.12, 1)
+theme_override_colors/font_hover_color = Color(0.10, 0.08, 0.06, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_button")
+theme_override_styles/hover = SubResource("StyleBoxFlat_button_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_button_hover")
 text = "Test Rattle & Verify"
 
 [node name="AbortButton" type="Button" parent="Panel/VBoxContainer/ButtonBox"]
-custom_minimum_size = Vector2(140, 40)
+custom_minimum_size = Vector2(140, 46)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.20, 0.16, 0.12, 1)
+theme_override_colors/font_hover_color = Color(0.10, 0.08, 0.06, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_button")
+theme_override_styles/hover = SubResource("StyleBoxFlat_button_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_button_hover")
 text = "Abort"

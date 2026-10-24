@@ -21,7 +21,26 @@ var dial_label_nodes: Array = []
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	hide()
+	
+	# Apply detective light mode label colors
+	title_label.add_theme_color_override("font_color", Color(0.45, 0.22, 0.12, 1)) # Detective red-brown header
+	desc_label.add_theme_color_override("font_color", Color(0.25, 0.20, 0.15, 1)) # Deep charcoal/sepia
+	
 	call_deferred("setup_puzzle")
+
+func get_button_style(is_hover: bool) -> StyleBoxFlat:
+	var sb = StyleBoxFlat.new()
+	sb.bg_color = Color(0.85, 0.80, 0.72, 1) if is_hover else Color(0.92, 0.88, 0.80, 1)
+	sb.border_width_left = 2
+	sb.border_width_top = 2
+	sb.border_width_right = 2
+	sb.border_width_bottom = 2
+	sb.border_color = Color(0.38, 0.30, 0.24, 1)
+	sb.corner_radius_top_left = 4
+	sb.corner_radius_top_right = 4
+	sb.corner_radius_bottom_right = 4
+	sb.corner_radius_bottom_left = 4
+	return sb
 
 func setup_puzzle() -> void:
 	show()
@@ -66,6 +85,10 @@ func setup_puzzle() -> void:
 	for item in current_evidence_items:
 		var cb = CheckBox.new()
 		cb.text = item["text"]
+		cb.add_theme_font_size_override("font_size", 28)
+		cb.add_theme_color_override("font_color", Color(0.20, 0.16, 0.12, 1))
+		cb.add_theme_color_override("font_pressed_color", Color(0.10, 0.08, 0.06, 1))
+		cb.add_theme_color_override("font_hover_color", Color(0.10, 0.08, 0.06, 1))
 		evidence_box.add_child(cb)
 		checkbox_nodes.append({"node": cb, "is_true": item["is_true"]})
 	
@@ -79,7 +102,14 @@ func setup_puzzle() -> void:
 		
 		var up_btn = Button.new()
 		up_btn.text = "▲"
-		up_btn.custom_minimum_size = Vector2(40, 30)
+		up_btn.custom_minimum_size = Vector2(50, 40)
+		up_btn.add_theme_font_size_override("font_size", 24)
+		up_btn.add_theme_color_override("font_color", Color(0.20, 0.16, 0.12, 1))
+		up_btn.add_theme_color_override("font_hover_color", Color(0.10, 0.08, 0.06, 1))
+		up_btn.add_theme_stylebox_override("normal", get_button_style(false))
+		up_btn.add_theme_stylebox_override("hover", get_button_style(true))
+		up_btn.add_theme_stylebox_override("pressed", get_button_style(true))
+		
 		var index = i
 		up_btn.pressed.connect(func(): adjust_dial(index, 1))
 		dial_container.add_child(up_btn)
@@ -87,13 +117,21 @@ func setup_puzzle() -> void:
 		var lbl = Label.new()
 		lbl.text = str(dial_values[i])
 		lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-		lbl.add_theme_font_size_override("font_size", 24)
+		lbl.add_theme_font_size_override("font_size", 36)
+		lbl.add_theme_color_override("font_color", Color(0.20, 0.16, 0.12, 1))
 		dial_container.add_child(lbl)
 		dial_label_nodes.append(lbl)
 		
 		var down_btn = Button.new()
 		down_btn.text = "▼"
-		down_btn.custom_minimum_size = Vector2(40, 30)
+		down_btn.custom_minimum_size = Vector2(50, 40)
+		down_btn.add_theme_font_size_override("font_size", 24)
+		down_btn.add_theme_color_override("font_color", Color(0.20, 0.16, 0.12, 1))
+		down_btn.add_theme_color_override("font_hover_color", Color(0.10, 0.08, 0.06, 1))
+		down_btn.add_theme_stylebox_override("normal", get_button_style(false))
+		down_btn.add_theme_stylebox_override("hover", get_button_style(true))
+		down_btn.add_theme_stylebox_override("pressed", get_button_style(true))
+		
 		down_btn.pressed.connect(func(): adjust_dial(index, -1))
 		dial_container.add_child(down_btn)
 		
@@ -129,7 +167,7 @@ func _on_submit_pressed() -> void:
 	var combination_correct = (dial_values == target_combination)
 	
 	if evidence_correct and combination_correct:
-		feedback_label.add_theme_color_override("font_color", Color(0.2, 0.8, 0.3, 1))
+		feedback_label.add_theme_color_override("font_color", Color(0.15, 0.55, 0.20, 1))
 		feedback_label.text = "✅ Rattle Click! Case Solved Successfully!"
 		
 		var tween = create_tween()
@@ -137,7 +175,7 @@ func _on_submit_pressed() -> void:
 		tween.tween_callback(complete_mission_success)
 	else:
 		failure_count += 1
-		feedback_label.add_theme_color_override("font_color", Color(0.9, 0.3, 0.3, 1))
+		feedback_label.add_theme_color_override("font_color", Color(0.75, 0.20, 0.15, 1))
 		feedback_label.text = "❌ Incorrect evidence or cipher combination! (-5 minutes penalty)"
 		
 		DialogueManager.play_dialogue("time_penalty_warning", get_tree().root)
