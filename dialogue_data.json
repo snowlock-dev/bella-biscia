@@ -1,9 +1,534 @@
 {
-	"default": [
-		{
-			"speaker":"Detective Solid",
-			"text": "...",
-			"text_speed": 0.01
-		}
-	]
+  "default": [
+	{
+	  "speaker": "Detective Solid",
+	  "text": "Fog's rolling thick off the bay tonight. Someone left a mark on Sanke, and we're going to find out who before sunrise.",
+	  "font_path": "res://Assets/Fonts/monogram.ttf",
+	  "text_speed": 0.01
+	}
+  ],
+  "morning_intro": [
+	{
+	  "speaker": "Detective Solid",
+	  "text": "Rain's hammering that red-striped awning, pooling nice and deep along the stone path. Inside looks warm through the glass, almost cozy. Too bad Sanke's stretched out unconscious in the alley with the medics hovering over him.",
+	  "font_path": "res://Assets/Fonts/monogram.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Akens",
+	  "text": "Docs say he'll make it, Solid. But we've got maybe thirty minutes before his crew loses their nerve and bolts into the woods. After that, the trail's cold.",
+	  "font_path": "res://Assets/Fonts/at01.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Detective Solid",
+	  "text": "Then let's skip the small talk under the canopy. Check the patio before you touch that front door.",
+	  "font_path": "res://Assets/Fonts/monogram.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Akens",
+	  "text": "Wet patio. Chairs, tables, glass door with rain streaming down. What exactly am I looking at?",
+	  "font_path": "res://Assets/Fonts/at01.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Detective Solid",
+	  "text": "The puddles, Akens. Look at the tail-drag threading through every single one of them -- straight from that door, around the corner, toward the alley. Sanke walked out under his own power. Nobody dragged him out here.",
+	  "font_path": "res://Assets/Fonts/monogram.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Akens",
+	  "text": "So he knew whoever jumped him. You're saying he strolled into an alley in this weather on purpose?",
+	  "font_path": "res://Assets/Fonts/at01.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Detective Solid",
+	  "text": "Or he wasn't expecting trouble. Case in point: the stray cat sitting on the fence all night. Didn't make a peep.",
+	  "font_path": "res://Assets/Fonts/monogram.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Akens",
+	  "text": "The alley cat? That mangy thing screams at passing shadows. I've lost sleep over it.",
+	  "font_path": "res://Assets/Fonts/at01.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Detective Solid",
+	  "text": "Exactly. Yet it slept peacefully through the silent stabbing not twenty feet away. Quick strike, sharp blade, zero struggle. Whoever did this was calm and knew Sanke well.",
+	  "font_path": "res://Assets/Fonts/monogram.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Akens",
+	  "text": "And no weapon left behind. Medics said his scales were clean. Killer took the knife with them.",
+	  "font_path": "res://Assets/Fonts/at01.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Detective Solid",
+	  "text": "Or stashed it close. Look at the glass by the front door, tucked under the overhang where the rain missed. Fresh claw scratches. Someone wanted us to see 'em.",
+	  "font_path": "res://Assets/Fonts/monogram.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Akens",
+	  "text": "A puzzle left behind? The guy's practically taunting us over a homicide.",
+	  "font_path": "res://Assets/Fonts/at01.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Detective Solid",
+	  "text": "Naturally. Arrogance always leaves fingerprints. Let's crack this morning puzzle and see how smart our culprit really is.",
+	  "font_path": "res://Assets/Fonts/monogram.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Akens",
+	  "text": "Thirty minutes on the clock and we're reading scratch marks on a door. Where do we start?",
+	  "font_path": "res://Assets/Fonts/at01.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Detective Solid",
+	  "text": "With the details everyone else stepped right over.",
+	  "font_path": "res://Assets/Fonts/monogram.ttf",
+	  "text_speed": 0.03
+	}
+  ],
+  "afternoon_interrogation": [
+	{
+	  "speaker": "Detective Solid",
+	  "text": "Afternoon sun's cutting through the front glass, kicking up dust and the smell of truffle oil. Akens, what'd you find in the kitchen?",
+	  "font_path": "res://Assets/Fonts/monogram.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Akens",
+	  "text": "More scratch marks by the back door, and a fresh shed snake skin behind the flour sacks. Whoever dropped that skin was shaking in their scales. We're getting nowhere fast, Solid. I think we're being led in circles.",
+	  "font_path": "res://Assets/Fonts/at01.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Detective Solid",
+	  "text": "Let's straighten those circles out. Hand me my pipe first; I think better when I'm burning tobacco. Now, about that skin -- look at the dorsal ridge and ventral count. That didn't drop off any ordinary local.",
+	  "font_path": "res://Assets/Fonts/monogram.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Kanes",
+	  "text": "Enough! You two clumping around my dining room like tax auditors! And put that pipe out -- this is an eatery, not a smoking lounge! Molting is what snakes do, it proves nothing!",
+	  "font_path": "res://Assets/Fonts/m6x11.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Detective Solid",
+	  "text": "They molt when they grow, Mr. Kanes. And they molt when sheer terror hits 'em. Finding a shed skin behind flour sacks hours after your best friend gets shanked? That's not routine.",
+	  "font_path": "res://Assets/Fonts/monogram.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Kanes",
+	  "text": "You're wasting time suspecting me! If we waste any more, the crew's going to scatter into the woods! Isn't that what you cops are always whining about -- the clock?",
+	  "font_path": "res://Assets/Fonts/m6x11.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Detective Solid",
+	  "text": "Funny thing about clocks, Akens. Mr. Kanes can tell us down to the second how much time we're wasting, but he's awfully hazy on where he was when Sanke took that knife.",
+	  "font_path": "res://Assets/Fonts/monogram.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Akens",
+	  "text": "Asked him that myself. Claims he was outside smoking on the patio. Only problem? The patio ashtray was dry, and it poured rain all night.",
+	  "font_path": "res://Assets/Fonts/at01.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Kanes",
+	  "text": "I came inside when the storm picked up, like any sane person! Since when is dry shelter a felony?!",
+	  "font_path": "res://Assets/Fonts/m6x11.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Detective Solid",
+	  "text": "Staying dry is fine, Kanes. But your tail's been twitching like a trapped beetle every time we bring up Sanke, and it goes quiet whenever we mention the back cellar.",
+	  "font_path": "res://Assets/Fonts/monogram.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Kanes",
+	  "text": "Nervous tic! Runs in my mother's family! Ask any physician in town! And keep my mustache out of your notebook, detective!",
+	  "font_path": "res://Assets/Fonts/m6x11.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Detective Solid",
+	  "text": "Noted. Now, let's talk about the blade. Clean cut, but Sanke's blood has traces of paralytic venom in it. Coated. Someone knew exact dosages.",
+	  "font_path": "res://Assets/Fonts/monogram.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Akens",
+	  "text": "Wait. Tonics, tenderizers, numbing agents... kitchen's stocked with that stuff right by the back door. Oh man.",
+	  "font_path": "res://Assets/Fonts/at01.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Kanes",
+	  "text": "Slander! Get out of my restaurant! Eleven years I've fed this city! I'll have the health inspector on you -- he's my cousin's in-law!",
+	  "font_path": "res://Assets/Fonts/m6x11.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Detective Solid",
+	  "text": "File all the complaints you want, Kanes. Your handwriting might just be our best exhibit. Now let's tackle that back door puzzle before my patience runs out.",
+	  "font_path": "res://Assets/Fonts/monogram.ttf",
+	  "text_speed": 0.03
+	}
+  ],
+  "evening_interrogation": [
+	{
+	  "speaker": "Sanke",
+	  "text": "Solid... amico... you made it. Freezing back here against these stone walls. Pull up a chair, keep it down.",
+	  "font_path": "res://Assets/Fonts/quaver.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Detective Solid",
+	  "text": "Easy, old friend. The docs say you'll coil again. Just sip your tonic and give me the essentials.",
+	  "font_path": "res://Assets/Fonts/monogram.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Sanke",
+	  "text": "It wasn't robbery. He smiled when he walked up. I recognized the face from old business -- manifests and ledgers I should've torched years ago. God, I see it now.",
+	  "font_path": "res://Assets/Fonts/quaver.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Detective Solid",
+	  "text": "Take a breath. Give me a name.",
+	  "font_path": "res://Assets/Fonts/monogram.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Sanke",
+	  "text": "Names got me carved up. Here's something better: when your deputies rushed the front, he bolted through the kitchen and out the back door into the alley. Something dropped from his coat as he ran. Sounded like metal hitting stone.",
+	  "font_path": "res://Assets/Fonts/quaver.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Detective Solid",
+	  "text": "What was it? The blade? A key?",
+	  "font_path": "res://Assets/Fonts/monogram.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Sanke",
+	  "text": "A letter. Wrapped in oilskin. The Emerald Fang syndicate, our killer, smuggling records -- everything in writing, with two different handwritings in the margins. One of 'em I'd know blindfolded.",
+	  "font_path": "res://Assets/Fonts/quaver.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Akens",
+	  "text": "The Emerald Fang! Solid, if we find that letter, we bust this whole ring wide open!",
+	  "font_path": "res://Assets/Fonts/at01.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Sanke",
+	  "text": "Then find it before time runs out. The Fang doesn't leave loose threads, and neither does he. One of you is racing the clock.",
+	  "font_path": "res://Assets/Fonts/quaver.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Detective Solid",
+	  "text": "Then we'll be faster. Akens -- comb the alley from fence to door. Every brick, every barrel.",
+	  "font_path": "res://Assets/Fonts/monogram.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Akens",
+	  "text": "Here! A flagstone wobbles by the fence -- got an oilskin packet wedged underneath. Smells like laudanum. But it's locked up tight with some cipher puzzle.",
+	  "font_path": "res://Assets/Fonts/at01.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Detective Solid",
+	  "text": "Naturally. He knew we'd trace him here. One last puzzle, Akens -- his personal vault.",
+	  "font_path": "res://Assets/Fonts/monogram.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Sanke",
+	  "text": "His rattle... I heard his rattle right before the knife came down. Sharp and quick, like an old pocket watch winding.",
+	  "font_path": "res://Assets/Fonts/quaver.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Detective Solid",
+	  "text": "Only one snake in this town has a rattle like a dying watch. Solve the puzzle, Akens, and we bag the letter, the ring, and the Fang.",
+	  "font_path": "res://Assets/Fonts/monogram.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Akens",
+	  "text": "Clock's almost dead and I can hear the crew rustling in the woods. Let's finish this.",
+	  "font_path": "res://Assets/Fonts/at01.ttf",
+	  "text_speed": 0.03
+	}
+  ],
+  "time_penalty_warning": [
+	{
+	  "speaker": "Akens",
+	  "text": "Damn it, Solid! That mistake just cost us five minutes! The clock's slipping away!",
+	  "font_path": "res://Assets/Fonts/at01.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Detective Solid",
+	  "text": "Five minutes is gone. Stop staring at the watch and look at what we've got left.",
+	  "font_path": "res://Assets/Fonts/monogram.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Kanes",
+	  "text": "Hear that?! Five minutes wasted! The crew's looking at the treeline right now while you two stand around!",
+	  "font_path": "res://Assets/Fonts/m6x11.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Akens",
+	  "text": "Funny how you always know exactly how much time is left, Kanes. Keep rattling; we're logging every second.",
+	  "font_path": "res://Assets/Fonts/at01.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Detective Solid",
+	  "text": "Knock it off, both of you. He's trying to rattle our nerves. Keep moving.",
+	  "font_path": "res://Assets/Fonts/monogram.ttf",
+	  "text_speed": 0.03
+	}
+  ],
+  "time_expired": [
+	{
+	  "speaker": "Detective Solid",
+	  "text": "Thirty minutes. Done. Hear that? Snap of branches, fading footsteps, pouring rain. They panicked and melted into the dark forest. We lost them, Akens.",
+	  "font_path": "res://Assets/Fonts/monogram.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Akens",
+	  "text": "Lost them? After Sanke's word, the shed skin, the ciphers? For nothing?",
+	  "font_path": "res://Assets/Fonts/at01.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Detective Solid",
+	  "text": "Not for nothing. Evidence washes away, but facts stay put. Everything we dug up is in your notebook, and notebooks don't run into the woods.",
+	  "font_path": "res://Assets/Fonts/monogram.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Akens",
+	  "text": "So we get another shot at them?",
+	  "font_path": "res://Assets/Fonts/at01.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Detective Solid",
+	  "text": "Hope and a stubborn memory. Somewhere out there, a cold-blooded killer thinks he's won. Let him. I don't lose twice.",
+	  "font_path": "res://Assets/Fonts/monogram.ttf",
+	  "text_speed": 0.03
+	}
+  ],
+  "ending_1_true": [
+	{
+	  "speaker": "Detective Solid",
+	  "text": "With that letter out from under the flagstone, the whole picture snaps together. Look at the syndicate papers next to the suspect's handwriting. Stroke for stroke: the cramped letters, the crossed t's, the loop on every signature.",
+	  "font_path": "res://Assets/Fonts/monogram.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Akens",
+	  "text": "It's him! The ledgers, the oilskin, the shed skin behind the flour. Cuff him, Solid!",
+	  "font_path": "res://Assets/Fonts/at01.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Kanes",
+	  "text": "You can't prove a scale of it! It's a forged conspiracy! I want a dozen lawyers and a public inquiry!",
+	  "font_path": "res://Assets/Fonts/m6x11.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Detective Solid",
+	  "text": "Ask for a bench of judges, Kanes. Won't save you. When you rule out the impossible -- the forged syndicate signature, the dry ashtray, the venom pulled straight from your own kitchen -- whatever's left is the truth. And it's pointing right at you.",
+	  "font_path": "res://Assets/Fonts/monogram.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Kanes",
+	  "text": "I only kept the books! The Emerald Fang had a knife to my throat! Sanke was going to burn the manifests and sink us all!",
+	  "font_path": "res://Assets/Fonts/m6x11.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Detective Solid",
+	  "text": "So you knifed your oldest friend behind his own kitchen and left riddles in the dirt to stroke your own ego. Vanity always brings 'em down.",
+	  "font_path": "res://Assets/Fonts/monogram.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Akens",
+	  "text": "Medics are getting Sanke on the stretcher. Color's returning. He's gonna pull through.",
+	  "font_path": "res://Assets/Fonts/at01.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Sanke",
+	  "text": "Told you... the Fang leaves no loose ends. Neither do you, detective. My testimony is yours. New Portland's sleeping safe tonight.",
+	  "font_path": "res://Assets/Fonts/quaver.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Detective Solid",
+	  "text": "Rest up, Sanke. The courts can handle the rest.",
+	  "font_path": "res://Assets/Fonts/monogram.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Akens",
+	  "text": "Rain's finally easing up. Sun's hitting the treetops. Fitting, right?",
+	  "font_path": "res://Assets/Fonts/at01.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Detective Solid",
+	  "text": "Save the poetry for your notebook, Akens. We've got a bookkeeper to jail and a syndicate to dismantle.",
+	  "font_path": "res://Assets/Fonts/monogram.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Akens",
+	  "text": "And the Fang?",
+	  "font_path": "res://Assets/Fonts/at01.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Detective Solid",
+	  "text": "We've got their ledgers and their couriers are flying blind. Let 'em run. I'll hunt 'em down one by one.",
+	  "font_path": "res://Assets/Fonts/monogram.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Akens",
+	  "text": "Not bad for a cold-blooded cop.",
+	  "font_path": "res://Assets/Fonts/at01.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Detective Solid",
+	  "text": "Just good police work. Buy a fresh notebook; we've got work to do.",
+	  "font_path": "res://Assets/Fonts/monogram.ttf",
+	  "text_speed": 0.03
+	}
+  ],
+  "ending_2_fallback": [
+	{
+	  "speaker": "Detective Solid",
+	  "text": "We missed the letter. Without proof of the syndicate, the courts won't hold the killer. No judge is convicting on a dry ashtray and a twitchy tail.",
+	  "font_path": "res://Assets/Fonts/monogram.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Akens",
+	  "text": "So we just let them walk? All that work, gone?",
+	  "font_path": "res://Assets/Fonts/at01.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Detective Solid",
+	  "text": "We pin it on the collective. It's messy and the real killer slips into the fog, but someone's taking the fall.",
+	  "font_path": "res://Assets/Fonts/monogram.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Kanes",
+	  "text": "All of us?! You're hauling the whole crew in on a technicality?!",
+	  "font_path": "res://Assets/Fonts/m6x11.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Detective Solid",
+	  "text": "A technicality is what keeps justice from being a lynching. Be grateful.",
+	  "font_path": "res://Assets/Fonts/monogram.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Akens",
+	  "text": "Constables are packing 'em into the van. Half are crying, half are swearing revenge.",
+	  "font_path": "res://Assets/Fonts/at01.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Detective Solid",
+	  "text": "Let 'em swear. Desperate crooks talk before trial. One of 'em will crack.",
+	  "font_path": "res://Assets/Fonts/monogram.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Akens",
+	  "text": "And Sanke?",
+	  "font_path": "res://Assets/Fonts/at01.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Detective Solid",
+	  "text": "He knows the truth even if the paper's missing. That letter is still out there waiting.",
+	  "font_path": "res://Assets/Fonts/monogram.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Akens",
+	  "text": "The mastermind is still breathing out in the dark. That's gonna bug me.",
+	  "font_path": "res://Assets/Fonts/at01.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Detective Solid",
+	  "text": "Then put that insomnia to work. Tomorrow we tear those smuggling rings apart. Shadows can't run forever.",
+	  "font_path": "res://Assets/Fonts/monogram.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Akens",
+	  "text": "You're awfully chipper for a guy whose case just fell apart.",
+	  "font_path": "res://Assets/Fonts/at01.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Detective Solid",
+	  "text": "I haven't lost. I've just been made to wait. The truth is patient. It knows I'm coming.",
+	  "font_path": "res://Assets/Fonts/monogram.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Kanes",
+	  "text": "This isn't over! The Fang protects its own!",
+	  "font_path": "res://Assets/Fonts/m6x11.ttf",
+	  "text_speed": 0.03
+	},
+	{
+	  "speaker": "Detective Solid",
+	  "text": "Then it'll be a good lesson for both of us. Grab your coat, Akens. We've got all the time in the world.",
+	  "font_path": "res://Assets/Fonts/monogram.ttf",
+	  "text_speed": 0.03
+	}
+  ]
 }

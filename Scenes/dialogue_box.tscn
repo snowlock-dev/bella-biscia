@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cerh682sl45re" path="res://Scripts/dialogue_box.gd" id="1_khnwt"]
 
 [node name="DialogueBox" type="Control" unique_id=508366852]
+z_index = 100
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

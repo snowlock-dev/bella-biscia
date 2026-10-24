@@ -86,9 +86,38 @@ material = SubResource("StandardMaterial3D_jcwox")
 [node name="CharacterBody3D" parent="." unique_id=1106722274 instance=ExtResource("1_a02cp")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 11.324452, 1.7426085, 21.817326)
 
-[node name="snake_up" parent="." unique_id=1983450186 instance=ExtResource("3_8j60k")]
+[node name="SnakeMorning" parent="." instance=ExtResource("3_8j60k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 15)
 
-[node name="NPC" parent="snake_up" unique_id=1491250561 instance=ExtResource("3_5a7ea")]
+[node name="NPC" parent="SnakeMorning" instance=ExtResource("3_5a7ea")]
+npc_name = "Detective Solid (Morning)"
+dialogue_key = "morning_intro"
 
-[node name="Mission" parent="." unique_id=33822698 instance=ExtResource("5_mission")]
+[node name="SnakeAfternoon" parent="." instance=ExtResource("3_8j60k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+
+[node name="NPC" parent="SnakeAfternoon" instance=ExtResource("3_5a7ea")]
+npc_name = "Kanes (Afternoon)"
+dialogue_key = "afternoon_interrogation"
+
+[node name="SnakeEvening" parent="." instance=ExtResource("3_8j60k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 15)
+
+[node name="NPC" parent="SnakeEvening" instance=ExtResource("3_5a7ea")]
+npc_name = "Sanke (Evening)"
+dialogue_key = "evening_interrogation"
+
+[node name="MissionMorning" parent="." instance=ExtResource("5_mission")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.324, 0.02, 18)
+mission_name = "Morning Patio Puzzle"
+act_required = 1
+
+[node name="MissionAfternoon" parent="." instance=ExtResource("5_mission")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.02, 12)
+mission_name = "Afternoon Kitchen Interrogation"
+act_required = 2
+
+[node name="MissionEvening" parent="." instance=ExtResource("5_mission")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.324, 0.02, 18)
+mission_name = "Evening Alley Vault"
+act_required = 3

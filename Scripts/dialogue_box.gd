@@ -32,8 +32,13 @@ func display_line() -> void:
 			var custom_font = load(line["font_path"])
 			if custom_font:
 				text_label.add_theme_font_override("normal_font", custom_font)
+				name_label.add_theme_font_override("font", custom_font)
+			else:
+				text_label.remove_theme_font_override("normal_font")
+				name_label.remove_theme_font_override("font")
 		else:
 			text_label.remove_theme_font_override("normal_font")
+			name_label.remove_theme_font_override("font")
 		
 		# Typewriter effect
 		var speed = line.get("text_speed", default_speed)

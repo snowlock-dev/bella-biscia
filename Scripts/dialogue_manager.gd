@@ -1,8 +1,12 @@
 extends Node
 
+signal dialogue_ended(key: String)
+
 var dialogue_data: Dictionary = {}
 var dialogue_scene = preload("res://Scenes/dialogue_box.tscn")
 var active_dialogue_instance = null
+var current_act: int = 1
+var current_playing_key: String = ""
 
 func _ready() -> void:
 	load_dialogue_file()
@@ -22,18 +26,21 @@ func play_dialogue(key: String, parent_node: Node) -> void:
 		push_warning("Dialogue key not found: " + key)
 		return
 	
-	# 1. FREE THE MOUSE FOR UI INTERACTION
+	current_playing_key = key
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
 	if active_dialogue_instance == null:
 		active_dialogue_instance = dialogue_scene.instantiate()
-		# Connect to cleanup when dialogue finishes
 		if not active_dialogue_instance.dialogue_finished.is_connected(_on_dialogue_finished):
 			active_dialogue_instance.dialogue_finished.connect(_on_dialogue_finished)
 		parent_node.add_child(active_dialogue_instance)
+	else:
+		active_dialogue_instance.move_to_front()
 	
 	active_dialogue_instance.start_dialogue(dialogue_data[key])
 
 func _on_dialogue_finished() -> void:
-	# 2. RE-CAPTURE THE MOUSE WHEN DIALOGUE ENDS
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	var finished_key = current_playing_key
+	current_playing_key = ""
+	dialogue_ended.emit(finished_key)
